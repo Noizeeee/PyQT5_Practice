@@ -20,6 +20,8 @@ class MainWindow(QMainWindow):
         #label.setAlignment(Qt.AlignLeft) #ALign Left Horizontally
         #label.setAlignment(Qt.AlignHCenter) #ALign Center Horizontally
 
+        label.setAlignment(Qt.AlignHCenter | Qt.AlignTop) #ALign Center and Top
+
         self.setWindowIcon(QIcon('ID.jpg'))
         self.setWindowTitle("Random Label")
         self.setGeometry(700, 400, 500, 500)
