@@ -8,6 +8,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         label = QLabel("Hello", self)
         label.setFont(QFont("Times New Roman", 20))
+        label.setGeometry(0, 0, 500, 100)
+        label.setStyleSheet("color: red;" "background-color: blue;")
 
         self.setWindowIcon(QIcon('ID.jpg'))
         self.setWindowTitle("Random Label")
