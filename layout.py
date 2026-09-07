@@ -17,10 +17,22 @@ class MainWindow(QMainWindow):
         
 
     def initUI(self):
+        self.label1.setStyleSheet("color: red;" "background-color: red;")
+        self.label2.setStyleSheet("color: red;" "background-color: orange;")
+        self.label3.setStyleSheet("color: red;" "background-color: yellow;")
+        self.label4.setStyleSheet("color: red;" "background-color: green;")
+        self.label5.setStyleSheet("color: red;" "background-color: blue;")
         central_widget = QWidget()
-        self.label1.setFont(QFont("Times New Roman", 20))
-        self.label1.setGeometry(0, 0, 500, 100)
-        self.label1.setStyleSheet("color: red;" "background-color: blue;")
+        vbox = QVBoxLayout()
+
+        vbox.addWidget(self.label1)
+        vbox.addWidget(self.label2)
+        vbox.addWidget(self.label3)
+        vbox.addWidget(self.label4)
+        vbox.addWidget(self.label5)
+
+        central_widget.setLayout(vbox)
+        self.setCentralWidget(central_widget)
 
 def main():
     app = QApplication(sys.argv)
