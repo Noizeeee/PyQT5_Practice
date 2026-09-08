@@ -40,7 +40,7 @@ class Clock(QWidget):
         self.label.setStyleSheet("font-size:150px;"
                                  "color: green;"
                                  )
-        #self.setStyleSheet("background-color: black;")
+        self.setStyleSheet("background-color: black;")
 
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)
@@ -49,6 +49,15 @@ class Clock(QWidget):
     def update_time(self):
         current_time = QTime.currentTime().toString("hh:mm:ss AP")
         self.label.setText(current_time)
+
+    def start(self):
+        pass
+
+    def pause(self):
+        pass
+
+    def reset(self):
+        pass
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
