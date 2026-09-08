@@ -23,7 +23,7 @@ class MainWindow(QMainWindow):
         self.label4.setStyleSheet("color: red;" "background-color: green;")
         self.label5.setStyleSheet("color: red;" "background-color: blue;")
         central_widget = QWidget()
-        vbox = QVBoxLayout()
+        vbox = QHBoxLayout()
 
         vbox.addWidget(self.label1)
         vbox.addWidget(self.label2)
