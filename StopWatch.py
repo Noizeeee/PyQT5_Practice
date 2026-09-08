@@ -9,7 +9,7 @@ class Clock(QWidget):
     def __init__(self):
         super().__init__()
         self.time = QTime(0, 0, 0, 0)
-        self.label = QLabel("00:00:00.0",self)
+        self.label = QLabel("00:00:00.00",self)
         self.timer = QTimer(self)
 
         self.start_btn = QPushButton("Start", self)
@@ -41,7 +41,15 @@ class Clock(QWidget):
         self.label.setStyleSheet("font-size:150px;"
                                  "color: green;"
                                  )
-        #self.setStyleSheet("background-color: black;")
+        self.setStyleSheet("""
+                            QWidget {
+                                background-color: black;
+                            }
+
+                            QPushButton {
+                                color: green;
+                            }
+                        """)
 
         self.start_btn.clicked.connect(self.start)
         self.pause_btn.clicked.connect(self.pause)
@@ -64,7 +72,7 @@ class Clock(QWidget):
         hours = time.hour()
         minutes = time.minute()
         second = time.second()
-        millisecond = time.msec()
+        millisecond = time.msec() // 10
 
         return f"{hours:02}:{minutes:02}:{second:02}.{millisecond:02}"
 
