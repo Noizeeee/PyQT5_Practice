@@ -11,10 +11,6 @@ class Clock(QWidget):
         self.label = QLabel(self)
         self.timer = QTimer(self)
 
-        self.start = QPushButton("Start", self)
-        self.pause = QPushButton("Pause", self)
-        self.reset = QPushButton("Reset", self)
-
         self.initUI()
 
     def initUI(self):
@@ -26,14 +22,6 @@ class Clock(QWidget):
         vbox.addWidget(self.label)
 
         self.setLayout(vbox)
-
-        vbox2 = QHBoxLayout()
-
-        vbox2.addWidget(self.start)
-        vbox2.addWidget(self.pause)
-        vbox2.addWidget(self.reset)
-
-        vbox.addLayout(vbox2)
 
         self.label.setAlignment(Qt.AlignCenter)
 
